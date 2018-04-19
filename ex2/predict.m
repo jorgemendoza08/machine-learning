@@ -17,9 +17,9 @@ p = zeros(m, 1);
 
 
 
+g = sigmoid(X*theta); %For Predict 0 or 1 called to sigmoid function.
 
-
-
+p = g >= 0.5; % >= 0.5 then p=1, else p=0. 
 
 % =========================================================================
 

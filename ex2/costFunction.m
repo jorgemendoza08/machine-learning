@@ -20,11 +20,13 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-%Review JM
-h = sigmoid(X*theta);
-% J = (1/m)*sum(-y .* log(h) - (1 - y) .* log(1-h));
-J = (1/m)*(-y'* log(h) - (1 - y)'* log(1-h));
-grad = (1/m) * X' *(h - y);
+
+
+% J = (1/m)*sum(-y .* log(h) - (1 - y) .* log(1-h)); %Cost Function Normal.
+h = sigmoid(X*theta); % h is to sigmoid Function for vectorized 
+J = (1/m)*(-y'* log(h) - (1 - y)'* log(1-h)); % Cost Function vectorized . The (') = ^ T
+%Gradient Descent
+grad = (1/m) *X'* (h - y) ; %vectorized implementation.
 
 
 
